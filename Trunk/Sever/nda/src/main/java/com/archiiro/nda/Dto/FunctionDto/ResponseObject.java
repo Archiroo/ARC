@@ -1,5 +1,7 @@
 package com.archiiro.nda.Dto.FunctionDto;
 
+import java.util.List;
+
 public class ResponseObject {
     private String status;
     private String message;
@@ -13,6 +15,15 @@ public class ResponseObject {
         this.status = status;
         this.message = message;
         this.data = data;
+    }
+
+    private List<Object> listData;
+
+    public ResponseObject(String status, String message, Object data, List<Object> listData) {
+        this.status = status;
+        this.message = message;
+        this.data = data;
+        this.listData = listData;
     }
 
     public String getStatus() {
@@ -37,5 +48,13 @@ public class ResponseObject {
 
     public void setData(Object data) {
         this.data = data;
+    }
+
+    public List<Object> getListData() {
+        return listData;
+    }
+
+    public void setListData(List<Object> listData) {
+        this.listData = listData;
     }
 }
