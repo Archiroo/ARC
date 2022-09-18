@@ -17,15 +17,6 @@ public class ResponseObject {
         this.data = data;
     }
 
-    private List<Object> listData;
-
-    public ResponseObject(String status, String message, Object data, List<Object> listData) {
-        this.status = status;
-        this.message = message;
-        this.data = data;
-        this.listData = listData;
-    }
-
     public String getStatus() {
         return status;
     }
