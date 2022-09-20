@@ -11,6 +11,8 @@ public class AdministrativeUnitDto {
     private LocalDateTime dateCreate;
     private String code;
     private String name;
+
+    private String addressDetail;
     private Integer level;
     private AdministrativeUnitDto parent;
     private Set<AdministrativeUnitDto> childrenAdministrativeDto;
@@ -24,6 +26,7 @@ public class AdministrativeUnitDto {
         this.dateCreate = entity.getDateCreate();
         this.code = entity.getCode();
         this.name = entity.getName();
+        this.addressDetail = entity.getAddressDetail();
         this.level = entity.getLevel();
         // Parent
         if(entity.getParent() != null) {
@@ -32,6 +35,7 @@ public class AdministrativeUnitDto {
             parentEntity.setDateCreate(entity.getParent().getDateCreate());
             parentEntity.setCode(entity.getParent().getCode());
             parentEntity.setName(entity.getParent().getName());
+            parentEntity.setAddressDetail(entity.getParent().getAddressDetail());
             parentEntity.setLevel(entity.getParent().getLevel());
             this.parent = new AdministrativeUnitDto(parentEntity);
         }
@@ -45,6 +49,7 @@ public class AdministrativeUnitDto {
                 auDto.setDateCreate(au.getDateCreate());
                 auDto.setCode(au.getCode());
                 auDto.setName(au.getName());
+                auDto.setAddressDetail(au.getAddressDetail());
                 auDto.setLevel(au.getLevel());
                 administrativeUnitDtos.add(auDto);
             }
@@ -57,6 +62,7 @@ public class AdministrativeUnitDto {
         this.dateCreate = entity.getDateCreate();
         this.code = entity.getCode();
         this.name = entity.getName();
+        this.addressDetail = entity.getAddressDetail();
         this.level = entity.getLevel();
         // Parent
         if(entity.getParent() != null) {
@@ -65,6 +71,7 @@ public class AdministrativeUnitDto {
             parentEntity.setDateCreate(entity.getParent().getDateCreate());
             parentEntity.setCode(entity.getParent().getCode());
             parentEntity.setName(entity.getParent().getName());
+            parentEntity.setAddressDetail(entity.getParent().getAddressDetail());
             parentEntity.setLevel(entity.getParent().getLevel());
             this.parent = new AdministrativeUnitDto(parentEntity);
         }
@@ -100,6 +107,14 @@ public class AdministrativeUnitDto {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getAddressDetail() {
+        return addressDetail;
+    }
+
+    public void setAddressDetail(String addressDetail) {
+        this.addressDetail = addressDetail;
     }
 
     public Integer getLevel() {

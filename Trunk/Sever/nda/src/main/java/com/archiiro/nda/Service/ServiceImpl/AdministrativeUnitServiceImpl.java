@@ -75,6 +75,9 @@ public class AdministrativeUnitServiceImpl implements AdministrativeUnitService 
         if(dto.getName() != null) {
             entity.setName(dto.getName());
         }
+        if(dto.getAddressDetail() != null) {
+            entity.setAddressDetail(dto.getAddressDetail());
+        }
         // Parent
         if(dto.getParent() != null) {
             AdministrativeUnit parentEntity = null;

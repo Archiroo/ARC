@@ -22,6 +22,9 @@ public class AdministrativeUnit {
     @Column(name="name")
     private String name;
 
+    @Column(name="address_detail")
+    private String addressDetail;
+
     @Column(name="level")
     private Integer level;
 
@@ -55,6 +58,14 @@ public class AdministrativeUnit {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getAddressDetail() {
+        return addressDetail;
+    }
+
+    public void setAddressDetail(String addressDetail) {
+        this.addressDetail = addressDetail;
     }
 
     public Integer getLevel() {
