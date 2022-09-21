@@ -10,7 +10,10 @@ import java.util.List;
 public interface AdministrativeUnitService {
     List<AdministrativeUnitDto> getAllDto();
 
+    List<AdministrativeUnitDto> saveOrUpdateList(List<AdministrativeUnitDto> listAdministrative);
+
     ResponseObject findEntityById(Long id);
+
 
     ResponseObject createDto(Long id, AdministrativeUnitDto dto);
 
@@ -21,6 +24,4 @@ public interface AdministrativeUnitService {
     Page<AdministrativeUnitDto> getPageDto(int pageIndex, int pageSize);
 
     Page<AdministrativeUnitDto> searchByPage(SearchDto searchDto);
-
-
 }

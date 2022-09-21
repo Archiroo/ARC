@@ -14,6 +14,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -29,6 +30,16 @@ public class AdministrativeUnitServiceImpl implements AdministrativeUnitService 
     @Override
     public List<AdministrativeUnitDto> getAllDto() {
         return this.administrativeUnitRepos.getAllDto();
+    }
+
+    @Override
+    public List<AdministrativeUnitDto> saveOrUpdateList(List<AdministrativeUnitDto> listAdministrative) {
+        ArrayList<AdministrativeUnitDto> ret = new ArrayList<AdministrativeUnitDto>();
+        for(int i = 0; i <listAdministrative.size(); i++) {
+            AdministrativeUnitDto auDto = listAdministrative.get(i);
+            this.updateDto(auDto.getId(), auDto);
+        }
+        return ret;
     }
 
     @Override
